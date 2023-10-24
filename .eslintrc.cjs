@@ -9,8 +9,9 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     // This disables the formatting rules in ESLint that Prettier is going to be responsible for handling.
     // Make sure it's always the last config, so it gets the chance to override other configs.
-    'eslint-config-prettier',
+    'prettier',
   ],
+  plugins: ['prettier'],
   settings: {
     react: {
       // Tells eslint-plugin-react to automatically detect the version of React to use.
@@ -25,6 +26,7 @@ module.exports = {
     },
   },
   rules: {
+    "prettier/prettier": ["error"],
     // Add your own rules here to override ones from the extended configs.
   },
 };
