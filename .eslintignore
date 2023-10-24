@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+.prettierrc.cjs
+.eslintrc.cjs
+commitlint.config.cjs
+env.d.ts
