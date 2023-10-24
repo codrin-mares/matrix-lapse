@@ -1,4 +1,4 @@
-import { ApplicationMode, VALID_APP_MODES } from "./constants";
+import { ApplicationMode, VALID_APP_MODES } from './constants';
 
 const env = import.meta.env;
 
@@ -33,8 +33,7 @@ const booleanMap = {
   false: false,
 };
 
-const isObjKey = <T extends object>(key: PropertyKey, obj: T): key is keyof T =>
-  key in obj;
+const isObjKey = <T extends object>(key: PropertyKey, obj: T): key is keyof T => key in obj;
 
 export const extractBooleanEnvVar = (key: keyof NodeJS.ProcessEnv): boolean => {
   const stringValue = extractStringEnvVar(key);
@@ -51,9 +50,9 @@ export const extractBooleanEnvVar = (key: keyof NodeJS.ProcessEnv): boolean => {
 export const extractApplicationMode = (): ApplicationMode => {
   const mode = env.MODE;
 
-  if (!VALID_APP_MODES.find(m => m === mode)) {
-    throw new Error(`Application mode = ${mode} is not one of: ${VALID_APP_MODES.join(', ')}!`)
+  if (!VALID_APP_MODES.find((m) => m === mode)) {
+    throw new Error(`Application mode = ${mode} is not one of: ${VALID_APP_MODES.join(', ')}!`);
   }
 
   return mode as ApplicationMode;
-}
+};
