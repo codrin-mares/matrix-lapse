@@ -12,9 +12,10 @@ const SettingsForm = ({ settings, onChange }: Props): JSX.Element => {
     <div className="mb-8 w-40">
       <div className="text-2xl mb-2">Settings</div>
       <div className="form-control">
-        <label className="label cursor-pointer">
+        <label className="label cursor-pointer" htmlFor="zero-based-cb">
           <span className="label-text">Zero based</span>
           <input
+            id="zero-based-cb"
             type="checkbox"
             checked={isZeroBased}
             className="toggle toggle-primary"
@@ -22,7 +23,7 @@ const SettingsForm = ({ settings, onChange }: Props): JSX.Element => {
           />
         </label>
         <label className="label" htmlFor="number-input">
-          <span className="label-text">Iteration speed</span>
+          <span className="label-text">Iteration Interval</span>
         </label>
         <input
           id="number-input"
