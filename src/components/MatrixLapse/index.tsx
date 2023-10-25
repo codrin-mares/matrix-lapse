@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import Range from '../Controls/Range';
 import Matrix from '../Matrix';
-import { Input, MatrixSequence } from '../types';
+import { Input, MatrixSequence, Settings } from '../types';
+import SettingsForm from '../Controls/Settings';
 
 type Props = {
   input: Input;
@@ -10,6 +11,7 @@ type Props = {
 
 const MatrixLapse = ({ input }: Props): JSX.Element => {
   const [seqStep, setSeqStep] = useState(0);
+  const [settings, setSettings] = useState<Settings>({ isZeroBased: true });
 
   const seq: MatrixSequence = input.map((m) => m.split('\n').map((row) => row.split('')));
   const range = {
@@ -19,13 +21,14 @@ const MatrixLapse = ({ input }: Props): JSX.Element => {
 
   return (
     <div>
+      <SettingsForm settings={settings} onChange={setSettings} />
       <Range
         value={seqStep}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSeqStep(parseInt(e.target.value) || 0)}
         min={range.min}
         max={range.max}
       />
-      <Matrix matrix={seq[seqStep]} />
+      <Matrix matrix={seq[seqStep]} settings={settings} />
     </div>
   );
 };

@@ -1,15 +1,17 @@
-import { Row } from '../types';
+import { TRow } from '../types';
 import Cell from './Cell';
 
 type Props = {
-  row: Row;
+  row: TRow;
+  rowIdx: number;
+  isZeroBased: boolean;
 };
 
-const Row = ({ row }: Props): JSX.Element => {
+const Row = ({ row, rowIdx, isZeroBased }: Props): JSX.Element => {
   return (
     <div className="join join-horizontal">
       {row.map((cell, idx) => (
-        <Cell key={idx} value={cell} />
+        <Cell key={idx} value={cell} row={isZeroBased ? rowIdx : rowIdx + 1} col={isZeroBased ? idx : idx + 1} />
       ))}
     </div>
   );

@@ -1,13 +1,13 @@
-import { Cell } from '../types';
+import { TCellEnhanced } from '../types';
 
-type Props = {
-  value: Cell;
-};
+type Props = TCellEnhanced;
 
-const Cell = ({ value }: Props): JSX.Element => {
+const Cell = ({ value, row, col }: Props): JSX.Element => {
   return (
-    <div className="join-item h-8 w-8 flex items-center justify-center">
-      <span>{value}</span>
+    <div className="tooltip tooltip-secondary" data-tip={`${row}/${col}`}>
+      <div className="cursor-pointer join-item h-8 w-8 flex items-center justify-center hover:border hover:border-white">
+        <span>{value}</span>
+      </div>
     </div>
   );
 };
