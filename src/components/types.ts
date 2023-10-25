@@ -1,15 +1,15 @@
-export type Input = string[];
-
 export type TCellEnhanced = {
   value: string;
   row: number;
   col: number;
+  isChanged: boolean;
 };
-export type TCell = string;
-
-export type TRow = TCell[];
+export type TRow = TCellEnhanced[];
 export type TMatrix = TRow[];
-export type MatrixSequence = TMatrix[];
+
+export type Input = string[];
+export type InputMatrix = string[][];
+export type MatrixSequence = InputMatrix[];
 
 export type Settings = {
   isZeroBased: boolean;
