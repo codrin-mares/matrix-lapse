@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="flex h-screen">
       <div className="m-auto p-10">
-        <h3 className="text-5xl font-bold mb-10">Your Matrix is Below</h3>
+        <h3 className="text-5xl font-bold mb-10 text-center">Matrix Lapse</h3>
         <MatrixLapse input={[exampleInput2D1, exampleInput2D2, exampleInput2D3, exampleInput2D4]} />
       </div>
     </div>

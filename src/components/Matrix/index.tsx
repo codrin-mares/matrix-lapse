@@ -11,7 +11,7 @@ const Matrix = ({ matrix, settings }: Props): JSX.Element => {
   const { isZeroBased } = settings;
 
   return (
-    <div className="join join-horizontal">
+    <div className="w-full justify-center join join-horizontal mt-6">
       <PositionAxis len={matrix.length} type="vertical" isZeroBased={isZeroBased} />
       <div className="join join-vertical">
         <PositionAxis len={matrix.length} type="horizontal" isZeroBased={isZeroBased} />
