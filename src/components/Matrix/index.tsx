@@ -1,15 +1,26 @@
+import { TMatrix, Settings } from '../types';
+import PositionAxis from './PositionAxis';
 import Row from './Row';
 
 type Props = {
-  matrix: string[][];
+  matrix: TMatrix;
+  settings: Settings;
 };
 
-const Matrix = ({ matrix }: Props): JSX.Element => {
+const Matrix = ({ matrix, settings }: Props): JSX.Element => {
+  const { isZeroBased } = settings;
+
   return (
-    <div className="join join-vertical">
-      {matrix.map((row, idx) => (
-        <Row key={idx} row={row} />
-      ))}
+    <div className="join join-horizontal">
+      <PositionAxis len={matrix.length} type="vertical" isZeroBased={isZeroBased} />
+      <div className="join join-vertical">
+        <PositionAxis len={matrix.length} type="horizontal" isZeroBased={isZeroBased} />
+        {matrix.map((row, idx) => (
+          <Row key={idx} row={row} rowIdx={idx} isZeroBased={isZeroBased} />
+        ))}
+        <PositionAxis len={matrix.length} type="horizontal" isZeroBased={isZeroBased} />
+      </div>
+      <PositionAxis len={matrix.length} type="vertical" isZeroBased={isZeroBased} />
     </div>
   );
 };
