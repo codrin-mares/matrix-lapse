@@ -1,7 +1,8 @@
+import { Row } from '../types';
 import Cell from './Cell';
 
 type Props = {
-  row: string[];
+  row: Row;
 };
 
 const Row = ({ row }: Props): JSX.Element => {

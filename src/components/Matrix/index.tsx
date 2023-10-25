@@ -1,7 +1,8 @@
+import { Matrix } from '../types';
 import Row from './Row';
 
 type Props = {
-  matrix: string[][];
+  matrix: Matrix;
 };
 
 const Matrix = ({ matrix }: Props): JSX.Element => {

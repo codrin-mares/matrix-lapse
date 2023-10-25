@@ -1,5 +1,7 @@
+import { Cell } from '../types';
+
 type Props = {
-  value: string;
+  value: Cell;
 };
 
 const Cell = ({ value }: Props): JSX.Element => {
