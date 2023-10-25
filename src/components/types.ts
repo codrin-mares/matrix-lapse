@@ -13,4 +13,5 @@ export type MatrixSequence = InputMatrix[];
 
 export type Settings = {
   isZeroBased: boolean;
+  iterationInterval: number;
 };

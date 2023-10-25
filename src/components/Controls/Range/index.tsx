@@ -7,7 +7,7 @@ type Props = {
 
 const Range = ({ value, onChange, min = 0, max }: Props): JSX.Element => {
   return (
-    <div className="mb-8">
+    <div className="mb-8 flex-grow">
       <div className="flex justify-between pb-4">
         <div className="badge badge-secondary badge-outline">Min - {min}</div>
         <div className="badge badge-primary badge-outline">Current - {value}</div>
