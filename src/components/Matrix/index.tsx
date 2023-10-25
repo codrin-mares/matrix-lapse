@@ -16,7 +16,7 @@ const Matrix = ({ matrix, settings }: Props): JSX.Element => {
       <div className="join join-vertical">
         <PositionAxis len={matrix.length} type="horizontal" isZeroBased={isZeroBased} />
         {matrix.map((row, idx) => (
-          <Row key={idx} row={row} rowIdx={idx} isZeroBased={isZeroBased} />
+          <Row key={idx} row={row} />
         ))}
         <PositionAxis len={matrix.length} type="horizontal" isZeroBased={isZeroBased} />
       </div>
