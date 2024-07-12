@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Range = ({ value, onChange, min = 0, max }: Props): JSX.Element => {
-  console.log('pula2');
+  console.log('pula3');
   return (
     <div className="mb-8 flex-grow">
       <div className="flex justify-between pb-4">
