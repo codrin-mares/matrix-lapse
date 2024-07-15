@@ -11,6 +11,8 @@ function App() {
   );
 }
 
+console.log();
+
 const exampleSeqInput1d = [
   `WWWLLLLLLLLLWWWLWWWLLLLLLWWWWW`,
   'WWWLLLLLLLLLWWWLWWWLLLLLLWWWWW',
