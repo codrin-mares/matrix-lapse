@@ -2,23 +2,22 @@ import MatrixLapse from './components/MatrixLapse';
 
 function App() {
   return (
-    <div className="flex h-screen">
-      <div className="m-auto p-10">
-        <h3 className="text-5xl font-bold mb-10 text-center">Matrix Lapse</h3>
+    <div className="h-screen">
+      <div className="p-10 py-16">
         <MatrixLapse input={[exampleInput2D1, exampleInput2D2, exampleInput2D3, exampleInput2D4]} />
       </div>
     </div>
   );
 }
 
-const exampleSeqInput1d = [
-  `WWWLLLLLLLLLWWWLWWWLLLLLLWWWWW`,
-  'WWWLLLLLLLLLWWWLWWWLLLLLLWWWWW',
-  'WWLLLLLLLLWWWWWWWWWLLLLLLWWWWW',
-  'WLLLLLLLLLWWWWWWWWWLLLLLLWWLWW',
-  'WLLLLLLLLWWWWWWWWWWLLLLLLWWLLW',
-  'WLLLLLLLWWWLWWWWWWWWWLLLWWWWLW',
-];
+// const exampleSeqInput1d = [
+//   `WWWLLLLLLLLLWWWLWWWLLLLLLWWWWW`,
+//   'WWWLLLLLLLLLWWWLWWWLLLLLLWWWWW',
+//   'WWLLLLLLLLWWWWWWWWWLLLLLLWWWWW',
+//   'WLLLLLLLLLWWWWWWWWWLLLLLLWWLWW',
+//   'WLLLLLLLLWWWWWWWWWWLLLLLLWWLLW',
+//   'WLLLLLLLWWWLWWWWWWWWWLLLWWWWLW',
+// ];
 
 const exampleInput2D1 = `WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 WWWLWWWWWWWWWWWWWWWWWWWLLWWWWW

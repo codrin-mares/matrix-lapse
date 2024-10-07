@@ -15,3 +15,8 @@ export type Settings = {
   isZeroBased: boolean;
   iterationInterval: number;
 };
+
+export type HoverPosition = {
+  row: number | null;
+  col: number | null;
+};

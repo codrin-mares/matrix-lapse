@@ -1,17 +1,21 @@
-import { TCellEnhanced } from '../types';
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
+import { HoverPosition, TCellEnhanced } from '../types';
 
-type Props = TCellEnhanced;
+type Props = TCellEnhanced & {
+  hover: boolean;
+  setHoverPosition: React.Dispatch<React.SetStateAction<HoverPosition>>;
+};
 
-const Cell = ({ value, row, col, isChanged }: Props): JSX.Element => {
+const Cell = ({ value, row, col, isChanged, hover, setHoverPosition }: Props): JSX.Element => {
   return (
-    <div className="tooltip tooltip-secondary" data-tip={`${row}/${col}`}>
-      <div
-        className={`cursor-pointer join-item h-8 w-8 flex items-center justify-center hover:border hover:border-white ${
-          isChanged ? 'bg-primary' : ''
-        }`}
-      >
-        <span>{value}</span>
-      </div>
+    <div
+      className={`cursor-pointer join-item border-none h-6 w-6 flex items-center justify-center ${
+        isChanged ? 'bg-primary' : ''
+      } ${hover ? 'bg-info font-bold' : ''}`}
+      onMouseOver={() => setHoverPosition({ row, col })}
+      onMouseOut={() => setHoverPosition({ row: null, col: null })}
+    >
+      <span>{value}</span>
     </div>
   );
 };

@@ -42,23 +42,25 @@ const MatrixLapse = ({ input }: Props): JSX.Element => {
   );
 
   return (
-    <div className="px-8">
-      <SettingsForm settings={settings} onChange={setSettings} />
-      <div className="join join-horizontal gap-6 flex">
-        <TimeControls
-          seqStep={seqStep}
-          setSeqStep={setSeqStep}
-          rangeMax={range.max}
-          iterationInterval={settings.iterationInterval}
-        />
-        <Range
-          value={seqStep}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSeqStep(parseInt(e.target.value) || 0)}
-          min={range.min}
-          max={range.max}
-        />
-      </div>
+    <div className="px-8 gap-6 flex horizontal justify-between">
       <Matrix matrix={enhancedMatrix} settings={settings} />
+      <div className="w-2/5">
+        <SettingsForm settings={settings} onChange={setSettings} />
+        <div className="join join-vertical gap-6 flex">
+          <TimeControls
+            seqStep={seqStep}
+            setSeqStep={setSeqStep}
+            rangeMax={range.max}
+            iterationInterval={settings.iterationInterval}
+          />
+          <Range
+            value={seqStep}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSeqStep(parseInt(e.target.value) || 0)}
+            min={range.min}
+            max={range.max}
+          />
+        </div>
+      </div>
     </div>
   );
 };
