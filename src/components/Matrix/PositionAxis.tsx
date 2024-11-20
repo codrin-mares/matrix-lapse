@@ -17,7 +17,10 @@ const processFinalAxis = (line: JSX.Element[], type: 'horizontal' | 'vertical'):
 
 const PositionAxis = ({ len, type, isZeroBased }: Props): JSX.Element => {
   const line = Array.from(Array(len)).map((_, i) => (
-    <div key={i} className="text-secondary join-item h-6 w-6 flex items-center justify-center">
+    <div
+      key={i}
+      className={`text-secondary join-item h-6 w-6 flex items-center justify-center ${i >= 100 ? 'text-xs' : ''}`}
+    >
       {isZeroBased ? i : i + 1}
     </div>
   ));

@@ -5,6 +5,8 @@ import Matrix from '../Matrix';
 import { Input, InputMatrix, MatrixSequence, Settings, TMatrix } from '../types';
 import SettingsForm from '../Controls/Settings';
 import TimeControls from '../Controls/TimeControls';
+import PathInput from '../Inputs/PathInput';
+import PositionInput from '../Inputs/PositionInput';
 
 type Props = {
   input: Input;
@@ -19,6 +21,7 @@ const generateEnhancedMatrix = (currentStep: InputMatrix, prevStep: InputMatrix,
         value: cell,
         row: isZeroBased ? rowIdx : rowIdx + 1,
         col: isZeroBased ? colIdx : colIdx + 1,
+        isActive: true,
         isChanged: cell !== prevStepCell,
       };
     }),
@@ -59,6 +62,8 @@ const MatrixLapse = ({ input }: Props): JSX.Element => {
             min={range.min}
             max={range.max}
           />
+          <PositionInput name="Start Position:" />
+          <PathInput />
         </div>
       </div>
     </div>
