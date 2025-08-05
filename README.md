@@ -6,3 +6,4 @@ This is an app that provides a visual presentation of a matrix.
 
 adding some more stuff
 adding more more stuff
+adding more more stuff
